@@ -1,19 +1,24 @@
 # 1. Реализовать скрипт, в котором должна быть предусмотрена функция расчета заработной платы сотрудника.
 # В расчете необходимо использовать формулу: (выработка в часах*ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
-
 from sys import argv
 
+def exit_res(*args):
+    return ((time_work * rate) + prize)
+
 try:
-    name_script, time_work, rate, prize = argv
-exe
+    if len(argv) > 1:
+        name_script, time_work, rate, prize = argv
+        pass
+except BaseException:
+    print("Error. Exit.")
+    exit(-1)
 
-
-if not (name_script and time_work and rate and prize):
-    # name_script = input("Inpute name script: ")
-    time_work = int(input("Inpute time work: "))
-    rate = int(input("Inpute ratet: "))
-    prize = int(input("Inpute prize: "))
+# if not (name_script and time_work and rate and prize):
+#     # name_script = input("Inpute name script: ")
+#     time_work = int(input("Inpute time work: "))
+#     rate = int(input("Inpute ratet: "))
+#     prize = int(input("Inpute prize: "))
 
 
 
