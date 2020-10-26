@@ -18,28 +18,27 @@
 # 2. Создать текстовый файл (не программно), сохранить в нем несколько строк,
 # выполнить подсчет количества строк, количества слов в каждой строке.
 
-# create dynamic file
-def generator_file():
-    f_file_open = open('2.txt', 'w')
-    data_list = [
-                'This', 'method', 'is', 'supplied', 'with', 'the', 'MersenneTwister', 'generator',
-                'and', 'some', 'other', 'generators', 'may', 'also', 'provide',
-                'it', 'as', 'an', 'optional', 'part', 'of', 'the', 'API2'
-                ]
-    data = [
-        f_file_open.write(str(data_list[i]) + "\n") for i in range(len(data_list))
-    ]
-    f_file_open.close()
-generator_file()
-
-def count():
-    file_open = open('2.txt', 'r')
-    print("Len strings: " + str(len(file_open.readlines())) + ".\n")
-    print("Count elements: " + str(
-        [i for i in range(len(file_open.readlines()))]
-    ) + ".")
-
-count()
+## create dynamic file
+# def generator_file():
+#     f_file_open = open('2.txt', 'w')
+#     data_list = [
+#                 'This', 'method', 'is', 'supplied', 'with', 'the', 'MersenneTwister', 'generator',
+#                 'and', 'some', 'other', 'generators', 'may', 'also', 'provide',
+#                 'it', 'as', 'an', 'optional', 'part', 'of', 'the', 'API2'
+#                 ]
+#     data = [
+#         f_file_open.write(str(data_list[i]) + "\n") for i in range(len(data_list))
+#     ]
+#     f_file_open.close()
+# generator_file()
+#
+# def count():
+#     file_open = open('2.txt', 'r')
+#     print("Count strings: " + str(len(file_open.readlines())) + ".")
+#     file_open = open('2.txt', 'r')
+#     print("Count elements: " + str(len(file_open.read())) + ".")
+#
+# count()
 
 # 3. Создать текстовый файл (не программно), построчно записать фамилии сотрудников
 # и величину их окладов (не менее 10 строк). Определить, кто из сотрудников имеет оклад менее 20 тыс.,
@@ -58,7 +57,25 @@ count()
 # Необходимо написать программу, открывающую файл на чтение и считывающую построчно данные.
 # При этом английские числительные должны заменяться на русские.
 # Новый блок строк должен записываться в новый текстовый файл.
-
+# def generator_file3():
+#     f_file_open = open('3_1.txt', 'w')
+#     data_list = [
+#                 'Иванов 23543.12',
+#                 'Петров 48659.74',
+#                 'Сидоров 14568.32',
+#                 'Ацтек 24573.75',
+#                 'Фарнух 47159.64',
+#                 'Кузнецов 74359.95',
+#                 'Попов 34956.96',
+#                 'Соколов 68425.73',
+#                 'Михайлов 91457.29',
+#                 'Котов 39856.48',
+#                 ]
+#     data = [
+#         f_file_open.write(str(data_list[i]) + "\n") for i in range(len(data_list))
+#     ]
+#     f_file_open.close()
+# generator_file3()
 
 
 
