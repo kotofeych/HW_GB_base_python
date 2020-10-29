@@ -83,19 +83,58 @@ generator_file3()
 def check_salary():
     f_file_open = open('3_1.txt', 'r')
     data = f_file_open.read()
-    return data
+    data_list = data.strip().split('\n')
+    data_dict = {
+        data_list[list_i].split()[el] : data_list[list_i].split()[el+1]
+        for list_i in range(len(data_list))
+        for el in range(len(str(list_i).split()))
+    }
+    list_person = []
+    for i in range(len(data_dict.items())):
+        # if float(data_dict.values()[i]) > 20000.00:
+        list_person.append(data_dict.values()[23543.12])
+    #     # if float(data_dict[i+1]) < 20000.00:
+    #     list_person.append(data_dict[str(i)])
+
+    return list_person
 
 
 print(check_salary())
 
 
+
+
+
+# rus = {'One' : 'Один', 'Two' : 'Два', 'Three' : 'Три', 'Four' : 'Четыре'}
+# new_file = []
+# with open('file_4.txt', 'r') as file_obj:
+#     #content = file_obj.read().split('\n')
+#     for i in file_obj:
+#         i = i.split(' ', 1)
+#         new_file.append(rus[i[0]] + '  ' + i[1])
+#     print(new_file)
+#
+# with open('file_4_new.txt', 'w') as file_obj_2:
+#     file_obj_2.writelines(new_file)
+
+
+
 # 4. Создать (программно) текстовый файл, записать в него программно набор чисел, разделенных пробелами.
 # Программа должна подсчитывать сумму чисел в файле и выводить ее на экран.
 
-
-
-
-
+# def summary():
+#     try:
+#         with open('file_5.txt', 'w+') as file_obj:
+#             line = input('Введите цифры через пробел \n')
+#             file_obj.writelines(line)
+#             my_numb = line.split()
+#
+#             print(sum(map(int, my_numb)))
+#     except IOError:
+#         print('Ошибка в файле')
+#     except ValueError:
+#         print('Неправильно набран номер. Ошибка ввода-вывода')
+# summary()
 
 # 5. Необходимо создать (не программно) текстовый файл, где каждая строка описывает учебный предмет
 # и наличие лекционных, практических и лабораторных занятий по этому предмету и их количество.
@@ -106,11 +145,12 @@ print(check_salary())
 # Физкультура: — 30(пр) —
 # Пример словаря: {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 
-
-
-
-
-
+# subj = {}
+# with open('file_6.txt', 'r') as init_f:
+#     for line in init_f:
+#         subject, lecture, practice, lab = line.split()
+#         subj[subject] = int(lecture) + int(practice) + int(lab)
+#     print(f'Общее количество часов по предмету - \n {subj}')
 
 # 6. Создать вручную и заполнить несколькими строками текстовый файл, в котором каждая строка должна
 # содержать данные о фирме: название, форма собственности, выручка, издержки.
@@ -128,3 +168,32 @@ print(check_salary())
 # [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 #
 # Подсказка: использовать менеджер контекста.
+
+# import json
+# profit = {}
+# pr = {}
+# prof = 0
+# prof_aver = 0
+# i = 0
+# with open('file_7.txt', 'r') as file:
+#     for line in file:
+#         name, firm, earning, damage = line.split()
+#         profit[name] = int(earning) - int(damage)
+#         if profit.setdefault(name) >= 0:
+#             prof = prof + profit.setdefault(name)
+#             i += 1
+#     if i != 0:
+#         prof_aver = prof / i
+#         print(f'Прибыль средняя - {prof_aver:.2f}')
+#     else:
+#         print(f'Прибыль средняя - отсутсвует. Все работают в убыток')
+#     pr = {'средняя прибыль': round(prof_aver)}
+#     profit.update(pr)
+#     print(f'Прибыль каждой компании - {profit}')
+#
+# with open('file_7.json', 'w') as write_js:
+#     json.dump(profit, write_js)
+#
+#     js_str = json.dumps(profit)
+#     print(f'Создан файл с расширением json со следующим содержимым: \n '
+#           f' {js_str}')
