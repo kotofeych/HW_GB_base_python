@@ -72,16 +72,19 @@ def generator_file3():
                 'Котов 39856.48',
                 ]
     data = [
-        f_file_open.write(str(data_list[i]) + "\n") for i in range(len(data_list))
+        f_file_open.write(str(data_list[i])) for i in range(len(data_list))
     ]
     f_file_open.close()
 
+
 generator_file3()
+
 
 def check_salary():
     f_file_open = open('3_1.txt', 'r')
-    data = f_file_open.read().split()
+    data = f_file_open.read()
     return data
+
 
 print(check_salary())
 
